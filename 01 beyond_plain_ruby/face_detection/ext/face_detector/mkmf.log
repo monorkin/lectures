@@ -1,0 +1,549 @@
+have_library: checking for main() in -lstdc++... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice     -lruby.2.2.0  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice     -lruby.2.2.0 -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_calib3d... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lstdc++  -lruby.2.2.0 -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_contrib... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_core... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_features2d... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_flann... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_highgui... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_imgproc... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_legacy... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_ml... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_objdetect... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_video... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_photo... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_gpu... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_gpu -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lopencv_nonfree... -------------------- yes
+
+"g++ -o conftest -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens conftest.c  -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib -L/usr/lib -L/usr/local/lib -L. -L/Users/Stanko/.rbenv/versions/2.2.0/lib  -fstack-protector -L/usr/local/lib  -L/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/lib -lrice    -lopencv_gpu -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lruby.2.2.0 -lopencv_nonfree -lopencv_gpu -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_ml -lopencv_legacy -lopencv_imgproc -lopencv_highgui -lopencv_flann -lopencv_features2d -lopencv_core -lopencv_contrib -lopencv_calib3d -lstdc++  -lpthread -ldl -lobjc "
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/core/core_c.h... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/core/core_c.h>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/core/core.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/core/core.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/imgproc/imgproc_c.h... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/imgproc/imgproc_c.h>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/imgproc/imgproc.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/imgproc/imgproc.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/video/tracking.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/video/tracking.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/features2d/features2d.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/features2d/features2d.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/flann/flann.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/flann/flann.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/calib3d/calib3d.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/calib3d/calib3d.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/objdetect/objdetect.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/objdetect/objdetect.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/legacy/compat.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/legacy/compat.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/legacy/legacy.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/legacy/legacy.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/highgui/highgui_c.h... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/highgui/highgui_c.h>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/highgui/highgui.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/highgui/highgui.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/photo/photo.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/photo/photo.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for opencv2/nonfree/nonfree.hpp... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <opencv2/nonfree/nonfree.hpp>
+/* end */
+
+--------------------
+
+have_header: checking for stdarg.h... -------------------- yes
+
+"clang -E -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/x86_64-darwin14 -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0/ruby/backward -I/Users/Stanko/.rbenv/versions/2.2.0/include/ruby-2.2.0 -I. -I/usr/include -I/usr/local/include -I/Users/Stanko/.rbenv/versions/2.2.0/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -I/Users/Stanko/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/rice-1.7.0/ruby/lib/include  -O3 -Wno-error=shorten-64-to-32  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdarg.h>
+/* end */
+
+--------------------
+
