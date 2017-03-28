@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_post_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Post
+  <% end %>
+  <h1>Listing posts</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Author</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @posts) do |post| %>
+            <td><%= post.title %></td>
+            <td><%= post.body.truncate_words(4) %></td>
+            <td><%= post.author.full_name %></td>
+            <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
