@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html
+  head
+    meta charset="utf-8"
+  body
+    main{style="box-sizing:bordered-box;"}
+      #messages.messages{style="height:90vh; width:100%;"}
+      .actions{style="width:100%;"}
+        .actions__name{style="display:inline-block; width:20%;"}
+          input#name{style="width: 100%" placeholder="Your nickname"}
+        .actions__message{style="display:inline-block; width:60%;"}
+          input#message{autofocus="true" style="width: 100%" placeholder="Enter your message here"}
+        .actions__send{style="display:inline-block; width:20%;"}
+          button#send{type="submit" style="width: 100%"}
+            | Send
+    script src="http://code.jquery.com/jquery-3.2.1.min.js" type="application/javascript"
+    javascript:
+      var $messages = $('#messages');
+      var $name = $('#name');
+      var $message = $('#message');
+      var $sendButton = $('#send');
+
+      var names = [
+        'Marko',
+        'Pero',
+        'Zlatko',
+        'Spasoje',
+        'Slavko',
+        'Zvjezdana',
+        'Svetolik',
+        'Momcilo',
+        'Miloje',
+        'Slobodan'
+      ];
+
+      $sendButton.on('click', function(e) {
+        e.preventDefault();
+        var name = $name.val();
+        var message = $message.val();
+        $message.val('');
+
+        $.post("/messages", { message: message, name: name });
+      });
+
+      var randomlyOrderedNames = names.sort(function() {
+        return 0.5 - Math.random()
+      });
+
+      $name.val(randomlyOrderedNames[0]);
+      $messages.append("<p>Initialized...</p>");
+
+      var evtSource = new EventSource("/stream", { withCredentials: true });
+      evtSource.onmessage = function(e) {
+        var data = JSON.parse(e.data)
+        $messages.append("<p>" + data.name + ": " + data.message + "</p>");
+      };
+      evtSource.onopen = function(e) {
+        $messages.append("<p>Connection established!</p>");
+      };
+      evtSource.onerror = function(e) {
+        $messages.append("<p>ERROR: " + JSON.stringify(e) + "</p>");
+      };

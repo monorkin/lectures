@@ -1,0 +1,10 @@
+version: '2.3'
+services:
+  backend:
+    build: ./server
+    volumes:
+      - ./server:/app
+    ports:
+      - "9292:9292"
+    tty: true
+    stdin_open: true
