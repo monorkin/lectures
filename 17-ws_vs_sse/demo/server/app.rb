@@ -3,6 +3,13 @@
 class App < Roda
   QUEUES = []
 
+  Thread.new do
+    loop do
+      sleep(60)
+      QUEUES.each { |q| q << { heartbeat: true } }
+    end
+  end
+
   plugin :streaming
   plugin :render, engine: 'slim'
 
@@ -25,6 +32,7 @@ class App < Roda
       response['Content-Type'] = 'text/event-stream;charset=UTF-8'
       q = Queue.new
       QUEUES << q
+      q << { heartbeat: true }
       stream(loop: true, callback: proc { QUEUES.delete(q) }) do |out|
         loop do
           out << "data: #{q.pop.to_json}\n\n"
