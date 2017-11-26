@@ -33,13 +33,20 @@ html
         'Slobodan'
       ];
 
-      $sendButton.on('click', function(e) {
+      var sendMessage = function(e) {
         e.preventDefault();
         var name = $name.val();
         var message = $message.val();
         $message.val('');
 
         $.post("/messages", { message: message, name: name });
+      };
+
+      $sendButton.on('click', sendMessage);
+      $message.on('keydown', function(e) {
+        if (e.keyCode == 13) {
+          sendMessage(e);
+        }
       });
 
       var randomlyOrderedNames = names.sort(function() {
@@ -47,7 +54,7 @@ html
       });
 
       $name.val(randomlyOrderedNames[0]);
-      $messages.append("<p>Initialized...</p>");
+      $messages.append("<p style='background-color:#7FDBFF; color:rgb(3, 54, 75)'>Initialized...</p>");
 
       var evtSource = new EventSource("/stream", { withCredentials: true });
       evtSource.onmessage = function(e) {
@@ -55,8 +62,8 @@ html
         $messages.append("<p>" + data.name + ": " + data.message + "</p>");
       };
       evtSource.onopen = function(e) {
-        $messages.append("<p>Connection established!</p>");
+        $messages.append("<p style='background-color:#3D9970; color:rgb(22, 55, 40)'>Connection established!</p>");
       };
       evtSource.onerror = function(e) {
-        $messages.append("<p>ERROR: " + JSON.stringify(e) + "</p>");
+        $messages.append("<p style='background-color:#FF4136 ; color:rgb(128, 6, 0);'>ERROR: " + JSON.stringify(e) + "</p>");
       };
