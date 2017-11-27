@@ -1,0 +1,10 @@
+[package]
+name = "demo"
+version = "0.1.0"
+authors = ["Stanko Krtalić <stanko.krtalic@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+helix = "0.7.2"
