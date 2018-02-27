@@ -1,0 +1,196 @@
+html
+  head
+    meta charset="utf-8"
+    script src="http://code.jquery.com/jquery-3.2.1.min.js" type="application/javascript"
+    css:
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      .messages {
+        height: calc(100vh - 3em);
+        width: 100%;
+        overflow-y: scroll;
+      }
+      .actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3em;
+      }
+      .actions input, .actions button {
+        width: 100%;
+        height: 4em;
+      }
+      .actions__name {
+        display: inline-block;
+        width: 15%;
+      }
+      .actions__message {
+        display: inline-block;
+        width: 85%;
+      }
+      .actions__send {
+        display: inline-block;
+        width: 15%;
+      }
+      .announce {
+        display: block;
+        margin: 1.3em 0 1em 0;
+        padding: .5em;
+        text-align: center;
+      }
+      .announce:first-child {
+        margin: 0;
+      }
+      .announce + .announce {
+        margin: 0;
+      }
+      .announce--info {
+        background-color: #7FDBFF;
+        color: rgb(3, 54, 75);
+      }
+      .announce--success {
+        background-color: #3D9970;
+        color: rgb(22, 55, 40);
+      }
+      .announce--danger {
+        background-color: #FF4136;
+        color: rgb(128, 6, 0);
+      }
+      .message {
+        display: block;
+        overflow: hidden;
+        margin-bottom: .5em;
+      }
+      .message:first-child {
+        margin-top: .5em;
+      }
+      .message__name {
+        padding-left: 1.1em;
+        color: #aaaaaa;
+      }
+      .message__body {
+        max-width: calc(100% - 3em);
+        min-width: 5em;
+        display: inline-block;
+        margin-left: 1em;
+        padding: .5em;
+        background-color: #dddddd;
+        border-radius: 6px 6px 6px 0;
+      }
+      .message--own > .message__name {
+        padding-left: 0;
+        padding-right: 1.1em;
+        text-align: right;
+      }
+      .message--own > .message__body {
+        margin-left: 0;
+        margin-right: 1em;
+        float: right;
+        background-color: #0074d9;
+        color: #ffffff;
+        border-radius: 6px 6px 0 6px;
+      }
+      .message--broadcast > .message__name {
+        display: none;
+      }
+      .message--broadcast > .message__body {
+        max-width: 100%;
+        text-align: center;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+        background-color: #FF851B;
+        color: hsla(28, 100%, 20%, 1.0);
+        border-radius: 0;
+        padding: 1.5em;
+      }
+
+  body
+    main
+      #messages.messages
+      .actions
+        .actions__name
+          input#name{placeholder="Your nickname"}
+        .actions__message
+          input#message{autofocus="true" placeholder="Enter your message here"}
+        / .actions__send
+          button#send{type="submit"}
+            | Send
+
+    javascript:
+      var $messages = $('#messages');
+      var $name = $('#name');
+      var $message = $('#message');
+      var $sendButton = $('#send');
+
+      var sendMessage = function(e) {
+        e.preventDefault();
+        var name = $.trim($name.val());
+        var message = $.trim($message.val());
+
+        if (!message || message.length === 0) return;
+        if (!name || name.length === 0) return;
+
+        $message.val('');
+
+        $.post("/messages", { message: message, name: name });
+      };
+
+      var appendMessage = function(name, body, type) {
+        var klass = '';
+        if (name === $name.val()) klass += 'message--own';
+        if (type === 'broadcast') klass += 'message--broadcast';
+        var html = "" +
+          "<div class='message " + klass + "'>" +
+            "<div class='message__name'>" +
+            "</div>" +
+            "<div class='message__body'>" +
+            "</div>" +
+          "</div>";
+        var $message = $(html);
+        $message.find('.message__name').text(name);
+        if (type === "image") {
+          body = "<img src='" + body + "' />"
+          $message.find('.message__body').html(body);
+        }
+        else if (type === "video") {
+          body = "<video><source src='" + body + "' /></video>"
+          $message.find('.message__body').html(body);
+        }
+        else {
+          $message.find('.message__body').text(body);
+        }
+        $messages.append($message);
+      };
+
+      $sendButton.on('click', sendMessage);
+      $message.on('keydown', function(e) {
+        if (e.keyCode == 13) {
+          sendMessage(e);
+        }
+      });
+
+      $messages.append("<div class='announce announce--info'>Initializing...</div>");
+
+      var evtSource = new EventSource("/stream", { withCredentials: true });
+      evtSource.onmessage = function(e) {
+        var data = JSON.parse(e.data)
+        if (data.heartbeat) return console.log('heartbeat');
+        var type = 'text';
+        if (data.broadcast) type = 'broadcast';
+        if (data.image) type = 'image';
+        if (data.video) type = 'video';
+        appendMessage(data.name, data.message, type);
+        $messages.scrollTop($messages[0].scrollHeight);
+      };
+      evtSource.onopen = function(e) {
+        $messages.append("<div class='announce announce--success'>Connection established!</div>");
+      };
+      evtSource.onerror = function(e) {
+        $messages.append("<div class='announce announce--danger'>ERROR: " + JSON.stringify(e) + "</div>");
+      };

@@ -1,0 +1,31 @@
+version: '2.3'
+services:
+  rabbitmq:
+    image: "rabbitmq:3.6-alpine"
+    volumes:
+     - ./_docker/rabbitmq/data:/var/lib/rabbitmq
+     - ./_docker/rabbitmq/config:/etc/rabbitmq
+    ports:
+      - "15672:15672"
+
+  demo-01:
+    build: ./01-simple_job_queue
+    volumes:
+      - ./01-simple_job_queue:/app
+    ports:
+      - "9292:9292"
+    tty: true
+    stdin_open: true
+
+  demo-02:
+    build: ./02-sneakers
+    volumes:
+      - ./02-sneakers:/app
+    ports:
+      - "9292:9292"
+    environment:
+      - "RABBITMQ_URL=amqp://guest:guest@rabbitmq:5672"
+    depends_on:
+      - rabbitmq
+    tty: true
+    stdin_open: true
